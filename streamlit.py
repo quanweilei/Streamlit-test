@@ -10,7 +10,7 @@ input = st.text_input("Search for Game")
 if df['Name'].isin([input]).empty:
     st.write("Game Does not Exist")
 else:
-    st.table(df.loc[df['Name'].__contains__(input)])
+    st.table(df.loc[df['Name'] == input])
 
 table = st.radio('Display Table', ["yes", "no"])
 if table == 'yes':
