@@ -9,7 +9,7 @@ sf = df
 filter = st.text_input("Filter by Platform")
 
 input = st.text_input("Search for Game")
-if df['Name'].isin([input]).empty == False:
+if df['Name'].isin([input]).empty == False or input.len() == 0:
     st.table(df.loc[df['Name'].str.contains(input, case = False)])
 
 table = st.radio('Display Table', ["yes", "no"])
