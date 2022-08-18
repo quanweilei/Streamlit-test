@@ -6,14 +6,11 @@ st.image("https://www.minecraft.net/content/dam/games/minecraft/marketplace/medi
 df = pd.read_csv("vgsales.csv", index_col = 0)
 sf = df
 
-filter = st.text_input("Filter by Platform")
-if df['Platform'].isin([input]).empty == False and len(filter) != 0:
-    df = df.loc[df['Platform'] == filter]
-    df.reset_index(drop = True)
-
 input = st.text_input("Search for Game")
 if df['Name'].isin([input]).empty == False and len(input) != 0:
     option = st.selectbox('Select Game', (df.loc[df['Name'].str.contains(input, case = False)]))
+    #filter = st.selectbox("Filter by Platform", (df.loc[df['Platform'] == filter]))
+    df = df.loc[df['Platform'] == filter]
     st.table(df.loc[df['Name'] == option])
 
 table = st.radio('Display Table', ["yes", "no"])
