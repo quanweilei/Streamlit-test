@@ -13,7 +13,7 @@ if df['Platform'].isin([input]).empty == False and len(filter) != 0:
 
 input = st.text_input("Search for Game")
 if df['Name'].isin([input]).empty == False and len(input) != 0:
-    st.write("currently filtering for ", filter)
+    st.write("**Currently filtering for **", filter)
     st.table(df.loc[df['Name'].str.contains(input, case = False)])
 
 table = st.radio('Display Table', ["yes", "no"])
