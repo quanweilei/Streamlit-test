@@ -6,6 +6,8 @@ st.image("https://www.minecraft.net/content/dam/games/minecraft/marketplace/medi
 df = pd.read_csv("vgsales.csv", index_col = 0)
 sf = df
 
+df = df['Year'].astype(int)
+
 input = st.text_input("Search for Game")
 if df['Name'].isin([input]).empty == False and len(input) != 0:
     option = st.selectbox('Select Game', (df.loc[df['Name'].str.contains(input, case = False)]))
@@ -13,7 +15,6 @@ if df['Name'].isin([input]).empty == False and len(input) != 0:
     #df = df.loc[df['Platform'] == filter]
     curr = df.loc[df['Name'] == option]
     st.table(curr)
-    st.line_chart(curr)
 
 table = st.radio('Display Table', ["yes", "no"])
 if table == 'yes':
