@@ -14,7 +14,7 @@ if df['Platform'].isin([input]).empty == False and len(filter) != 0:
 input = st.text_input("Search for Game")
 if df['Name'].isin([input]).empty == False and len(input) != 0:
     option = st.selectbox('Select Game', (df.loc[df['Name'].str.contains(input, case = False)]))
-    st.table(option)
+    st.table(df.loc[df['Name'] == option])
 
 table = st.radio('Display Table', ["yes", "no"])
 if table == 'yes':
