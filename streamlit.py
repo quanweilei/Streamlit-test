@@ -7,9 +7,7 @@ df = pd.read_csv("vgsales.csv", index_col = 0)
 
 input = st.text_input("Search for Game")
 
-if df['Name'].isin([input]).empty:
-    st.write("Game Does not Exist")
-else:
+if df['Name'].isin([input]).empty == False:
     st.table(df.loc[df['Name'] == input])
 
 table = st.radio('Display Table', ["yes", "no"])
