@@ -7,7 +7,7 @@ df = pd.read_csv("vgsales.csv", index_col = 0)
 sf = df
 
 filter = st.text_input("Filter by Platform")
-if df['Platform'].isin([input]).empty == False and len(input) != 0:
+if df['Platform'].isin([input]).empty == False and len(filter) != 0:
     df = df.loc[df['Platform'] == filter]
     df.reset_index(drop = True)
 
