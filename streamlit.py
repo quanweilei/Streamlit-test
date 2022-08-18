@@ -11,7 +11,9 @@ if df['Name'].isin([input]).empty == False and len(input) != 0:
     option = st.selectbox('Select Game', (df.loc[df['Name'].str.contains(input, case = False)]))
     #filter = st.selectbox("Filter by Platform", (df.loc[df['Platform'] == filter]))
     #df = df.loc[df['Platform'] == filter]
-    st.table(df.loc[df['Name'] == option])
+    curr = df.loc[df['Name'] == option]
+    st.table(curr)
+    st.line_chart(curr)
 
 table = st.radio('Display Table', ["yes", "no"])
 if table == 'yes':
