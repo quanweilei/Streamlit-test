@@ -7,7 +7,9 @@ df = pd.read_csv("vgsales.csv", index_col = 0)
 sf = df
 
 for i in df['Year']:
-   i = i[0] + i[2:4] 
+   s = str(i)
+   s = s[0] + s[2:4] 
+   i = s
 
 input = st.text_input("Search for Game")
 if df['Name'].isin([input]).empty == False and len(input) != 0:
