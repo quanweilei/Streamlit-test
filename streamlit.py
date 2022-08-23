@@ -10,8 +10,8 @@ sf = df
 for (Year, i) in df.iteritems():
     s = str(i)
     s = s[0] + s[2:4] 
-
-    df = df.replace({'Year': {i : int(s)}})
+    print(s)
+    #df = df.replace({'Year': {i : s}})
 
 
 
