@@ -6,8 +6,8 @@ st.image("https://www.minecraft.net/content/dam/games/minecraft/marketplace/medi
 df = pd.read_csv("vgsales.csv", index_col = 0)
 sf = df
 
-#for i in df['Year']:
-    
+for i in df['Year']:
+   i = i[0] + i[2:4] 
 
 input = st.text_input("Search for Game")
 if df['Name'].isin([input]).empty == False and len(input) != 0:
