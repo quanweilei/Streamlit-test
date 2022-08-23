@@ -6,7 +6,7 @@ st.image("https://www.minecraft.net/content/dam/games/minecraft/marketplace/medi
 df = pd.read_csv("vgsales.csv", index_col = 0)
 sf = df
 
-for (Year, i) in df.iteritems():
+for (i, Year) in df.iteritems():
     st.write(i)
 
 input = st.text_input("Search for Game")
