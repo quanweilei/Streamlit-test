@@ -6,12 +6,6 @@ st.image("https://www.minecraft.net/content/dam/games/minecraft/marketplace/medi
 df = pd.read_csv("vgsales.csv", index_col = 0)
 sf = df
 
-temp = df['Year'].values
-
-for i in temp:
-    s = str(i)
-    df = df.replace({'Year': {i : s}})
-
 
 
 input = st.text_input("Search for Game")
