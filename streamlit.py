@@ -10,6 +10,7 @@ for i in df['Year']:
    s = str(i)
    s = s[0] + s[2:4] 
    i = s
+   df.update(df)
 
 input = st.text_input("Search for Game")
 if df['Name'].isin([input]).empty == False and len(input) != 0:
