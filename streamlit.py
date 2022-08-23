@@ -10,9 +10,9 @@ sf = df
 
 for (Year, i) in df.iteritems():
     if Year == "Year":
-        
-        st.write(i)
-
+        s = str(i)
+        st.write(i[:4])
+        #df = df.replace({'Year': {i : s}})
 
 
 
