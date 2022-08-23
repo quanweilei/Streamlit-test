@@ -8,11 +8,10 @@ sf = df
 
 
 
-for (Year, i) in df.iteritems():
-    if Year == "Year":
-        s = str(i)
-        st.write(i[:4])
-        #df = df.replace({'Year': {i : s}})
+for i in df['Year'].values:
+    s = str(i)
+    st.write(s[:4])
+    #df = df.replace({'Year': {i : s}})
 
 
 
