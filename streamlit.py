@@ -10,7 +10,6 @@ sf = df
 
 for i in df['Year'].values:
     s = str(i)
-    st.write(s[:4])
     df = df.replace({'Year': {i : s}})
 
 
