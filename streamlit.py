@@ -10,7 +10,9 @@ sf = df
 for (Year, i) in df.iteritems():
     s = str(i)
     s = s[0] + s[2:4] 
-    i = s
+
+    df.replace({'Year': {i : s}})
+
 
 
 input = st.text_input("Search for Game")
