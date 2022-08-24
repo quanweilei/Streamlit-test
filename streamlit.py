@@ -4,6 +4,7 @@ import pandas as pd
 st.title("Video Game Sales Dataset")
 st.image("https://www.minecraft.net/content/dam/games/minecraft/marketplace/mediablock-buzzybees.jpg")
 df = pd.read_csv("vgsales.csv", index_col = 0)
+df.index.names = ['Rank']
 sf = df
 
 
@@ -16,7 +17,8 @@ if df['Name'].isin([input]).empty == False and len(input) != 0:
     curr = df.loc[df['Name'] == option]
     st.table(curr)
 
-sf.style.format(precision = 0)
+sf['Year'] = int(sf['Year'])
+
 table = st.radio('Display Table', ["yes", "no"])
 if table == 'yes':
     st.dataframe(sf, 100000, 500)
