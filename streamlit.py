@@ -16,7 +16,7 @@ if df['Name'].isin([input]).empty == False and len(input) != 0:
     curr = df.loc[df['Name'] == option]
     st.table(curr)
 
-sf.style.apply(5)
+sf.style.format(precision = 0)
 table = st.radio('Display Table', ["yes", "no"])
 if table == 'yes':
     st.dataframe(sf, 100000, 500)
