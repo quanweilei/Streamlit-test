@@ -4,7 +4,7 @@ import pandas as pd
 st.title("Video Game Sales Dataset")
 st.image("https://www.minecraft.net/content/dam/games/minecraft/marketplace/mediablock-buzzybees.jpg")
 df = pd.read_csv("vgsales.csv", index_col = 0)
-df.index.names = ['Rank']
+df.rename(columns = {list(df)[1]: 'Rank'}, inplace= True)
 sf = df
 
 
