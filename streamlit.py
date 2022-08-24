@@ -18,4 +18,4 @@ if df['Name'].isin([input]).empty == False and len(input) != 0:
 
 table = st.radio('Display Table', ["yes", "no"])
 if table == 'yes':
-    st.dataframe(sf, 100000, 500)
+    st.dataframe(sf.style(5), 100000, 500)
