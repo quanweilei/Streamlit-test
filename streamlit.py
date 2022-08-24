@@ -11,7 +11,9 @@ sf = df
 
 input = st.text_input("Search for Game")
 if df['Name'].isin([input]).empty == False and len(input) != 0:
-    option = st.selectbox('Select Game', (df.loc[df['Name'].str.contains(input, case = False)]))
+    list = df.loc[df['Name'].str.contains(input, case = False)]
+    list.sort()
+    option = st.selectbox('Select Game', list)
     #filter = st.selectbox("Filter by Platform", (df.loc[df['Platform'] == filter]))
     #df = df.loc[df['Platform'] == filter]
     curr = df.loc[df['Name'] == option]
