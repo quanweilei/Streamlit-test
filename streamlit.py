@@ -5,7 +5,7 @@ st.title("Video Game Sales Dataset")
 st.image("https://www.minecraft.net/content/dam/games/minecraft/marketplace/mediablock-buzzybees.jpg")
 df = pd.read_csv("vgsales.csv", index_col = 0)
 #df.rename(columns = {list(df)[-1]: 'Rank'}, inplace= True)
-df = pd.DataFrame(df).set_index('Rank')
+df = df.rename_axis('Rank')
 sf = df
 
 
