@@ -7,7 +7,7 @@ df = pd.read_csv("vgsales.csv", index_col = 0)
 sf = df
 
 input = st.text_input("Search for Game")
-if (df.loc[df['Name'].str.contains(input, case = False)]).empty == False and len(input) != 0:
+if (df.loc[df['Name'].str.contains(input, na = False)]).empty == False and len(input) != 0:
     option = st.selectbox('Select Game', (df.loc[df['Name'].str.contains(input, case = False)]))
     #filter = st.selectbox("Filter by Platform", (df.loc[df['Platform'] == filter]))
     #df = df.loc[df['Platform'] == filter]
