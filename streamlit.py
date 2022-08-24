@@ -17,8 +17,6 @@ if df['Name'].isin([input]).empty == False and len(input) != 0:
     curr = df.loc[df['Name'] == option]
     st.table(curr)
 
-sf['Year'] = int(sf['Year'])
-
 table = st.radio('Display Table', ["yes", "no"])
 if table == 'yes':
     st.dataframe(sf, 100000, 500)
